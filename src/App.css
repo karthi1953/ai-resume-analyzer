@@ -1,0 +1,15 @@
+/* Custom gradient background */
+body {
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  }
+  
+  /* Custom max-width for the container */
+  .max-w-800 {
+    max-width: 800px;
+  }
+  
+  /* Custom rounded corners */
+  .rounded-4 {
+    border-radius: 1.5rem;
+  }
+
