@@ -28,9 +28,13 @@ function App() {
       const formData = new FormData();
       formData.append("resume", file);
 
-      const response = await axios.post("http://localhost:5000/analyze", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      const response = await axios.post(
+        "https://ai-resume-analyzer-backend.onrender.com/analyze",
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
 
       console.log("Backend Response:", response.data); // Debugging
 
@@ -60,13 +64,13 @@ function App() {
           Quick AI Resume Analyzer
         </h1>
         <h6 className="text-center text-success">
-  <a 
-    href="https://github.com/karthi1953" 
-    style={{ textDecoration: "none", color: "inherit" }}
-  >
-    Karthik's project
-  </a>
-</h6>
+          <a
+            href="https://github.com/karthi1953"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            Karthik's project
+          </a>
+        </h6>
         <h6 className="text-center">Reload the Page if error occurs</h6>
 
         <div className="mb-4">
@@ -143,9 +147,7 @@ function App() {
                     </motion.li>
                   ))}
                 </ul>
-
               </div>
-              
             </motion.div>
           )}
         </AnimatePresence>
