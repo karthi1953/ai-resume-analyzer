@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
-import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
-import "./App.css"; // Optional custom CSS for additional styling
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
 function App() {
   const [file, setFile] = useState(null);
   const [analysis, setAnalysis] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [darkMode, setDarkMode] = useState(false); // 🌙 NEW state
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
@@ -36,16 +37,12 @@ function App() {
         }
       );
 
-      console.log("Backend Response:", response.data); // Debugging
-
-      // Set the analysis data
       setAnalysis(response.data.analysis);
     } catch (err) {
-      console.error("Frontend Error:", err);
       setError(
         err.response?.data?.error ||
-        err.message ||
-        "Failed to analyze resume. Check the console for details."
+          err.message ||
+          "Failed to analyze resume. Check the console for details."
       );
     } finally {
       setLoading(false);
@@ -53,16 +50,33 @@ function App() {
   };
 
   return (
-    <div className="min-vh-100 bg-light d-flex align-items-center justify-content-center p-4">
+    <div
+      className={`min-vh-100 d-flex align-items-center justify-content-center p-4 ${
+        darkMode ? "dark-mode" : "bg-light"
+      }`}
+    >
       <motion.div
-        className="w-100 max-w-800 bg-white rounded-4 shadow-lg p-5"
+        className="w-100 max-w-800 bg-white rounded-4 shadow-lg p-5 position-relative"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
+        {/* 🌙 Toggle Switch */}
+        <div className="position-absolute top-0 end-0 m-3">
+          <label className="switch">
+            <input
+              type="checkbox"
+              checked={darkMode}
+              onChange={() => setDarkMode(!darkMode)}
+            />
+            <span className="slider"></span>
+          </label>
+        </div>
+
         <h1 className="text-center display-4 fw-bold text-primary mb-5">
           Quick AI Resume Analyzer
         </h1>
+
         <h6 className="text-center text-success">
           <a
             href="https://github.com/karthi1953"
@@ -89,7 +103,10 @@ function App() {
         >
           {loading ? (
             <div className="d-flex align-items-center justify-content-center">
-              <div className="spinner-border spinner-border-sm me-2" role="status">
+              <div
+                className="spinner-border spinner-border-sm me-2"
+                role="status"
+              >
                 <span className="visually-hidden">Loading...</span>
               </div>
               Analyzing...
