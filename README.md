@@ -1,3 +1,8 @@
+## Backend
+This project uses a separate backend built with Node.js/Express.  
+Repo: [AI Resume Analyzer Backend](https://github.com/karthi1953/ai-resume-analyzer-backend)  
+Live API: https://ai-resume-analyzer-backend.onrender.com
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
