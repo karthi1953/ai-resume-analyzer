@@ -1,10 +1,10 @@
-# AI Resume Analyzer 🚀
+# AI Resume Analyzer 
 
 A professional tool that analyzes resumes for **ATS (Applicant Tracking System)** compatibility and provides clear, actionable improvement suggestions.
 
 ---
 
-## 🔍 What It Does
+## What It Does
 - Upload resumes in **PDF, DOCX, or TXT**
 - Generates an **ATS compatibility score (0–100)**
 - Provides **specific improvement suggestions**
@@ -12,19 +12,19 @@ A professional tool that analyzes resumes for **ATS (Applicant Tracking System)*
 
 ---
 
-## 🌐 Live URLs
+## Live URLs
 - **Frontend:** https://ai-resume-analyzer.vercel.app  
 - **Backend:** https://resume-analyzer-ai.onrender.com  
 
 ---
 
-## 📁 Repository URLs
+## Repository URLs
 - **Frontend Code:** https://github.com/karthi1953/ai-resume-analyzer  
 - **Backend Code:** https://github.com/karthi1953/ai-resume-analyzer-backend  
 
 ---
 
-## 🧩 Project Structure
+## Project Structure
 
 ### Frontend (React)
 - `App.js` – Main application component, UI state & API calls  
@@ -37,10 +37,9 @@ A professional tool that analyzes resumes for **ATS (Applicant Tracking System)*
 ### Backend (Node.js + Express)
 - `index.js` – Server setup and routing  
 - `routes/analyze.js` – Resume analysis API endpoint  
-- `utils/atsScorer.js` – Core ATS scoring logic (3‑phase analysis)  
+- `utils/atsScorer.js` – Core ATS scoring logic
 - `utils/fileParser.js` – Text extraction from PDF/DOCX/TXT  
 - `middleware/errorHandler.js` – Global error handling  
-- `.env` – Server configuration  
 
 ---
 
@@ -57,4 +56,4 @@ This project focuses on solving a real‑world problem—**getting resumes past 
 
 ---
 
-Built with ❤️ using React, Node.js, and Express.
+Built using React and Express.
