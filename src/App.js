@@ -247,7 +247,6 @@ function App() {
             </div>
           </div>
           <div className="mt-2">
-
             <button 
               className="btn btn-sm btn-outline-secondary"
               onClick={() => {
@@ -260,28 +259,6 @@ function App() {
           </div>
         </footer>
       </div>
-
-      {/* Stats Banner */}
-      {analysis && (
-        <div className="stats-banner animate-slide-up">
-          <div className="container">
-            <div className="row text-center">
-              <div className="col-4">
-                <small className="text-muted">Score</small>
-                <div className="fw-bold text-primary">{analysis.ats_score}/100</div>
-              </div>
-              <div className="col-4">
-                <small className="text-muted">Improvements</small>
-                <div className="fw-bold text-warning">{analysis.mandatory_changes?.length || 0}</div>
-              </div>
-              <div className="col-4">
-                <small className="text-muted">Status</small>
-                <div className="fw-bold text-success">Complete</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
