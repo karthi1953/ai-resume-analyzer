@@ -12,7 +12,6 @@ const FileUpload = ({ onAnalysisComplete, onError, loading, setLoading }) => {
     const file = e.target.files[0];
     if (!file) return;
 
-    // Validate
     const allowedTypes = ['.pdf', '.docx', '.txt'];
     const fileExt = file.name.toLowerCase().substring(file.name.lastIndexOf('.'));
     

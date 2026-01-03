@@ -10,7 +10,6 @@ function App() {
   const [apiStatus, setApiStatus] = useState(null);
   const [showTips, setShowTips] = useState(false);
 
-  // Check API health on component mount
   useEffect(() => {
     const checkApiHealth = async () => {
       try {
@@ -38,7 +37,6 @@ function App() {
   const handleAnalysisComplete = (data) => {
     setAnalysis(data);
     setError("");
-    // Store last analysis in localStorage for persistence
     localStorage.setItem('lastAnalysis', JSON.stringify({
       data: data,
       timestamp: new Date().toISOString()
@@ -56,12 +54,10 @@ function App() {
     setLoading(false);
   };
 
-  // Load last analysis from localStorage on component mount
   useEffect(() => {
     const lastAnalysis = localStorage.getItem('lastAnalysis');
     if (lastAnalysis) {
       const { data, timestamp } = JSON.parse(lastAnalysis);
-      // Only load if less than 1 hour old
       const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000);
       if (new Date(timestamp) > oneHourAgo) {
         setAnalysis(data);
