@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     const checkApiHealth = async () => {
       try {
-        const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+        const API_URL = process.env.REACT_APP_API_URL;
         const response = await fetch(`${API_URL}/health`);
         const data = await response.json();
         setApiStatus({
@@ -247,12 +247,7 @@ function App() {
             </div>
           </div>
           <div className="mt-2">
-            <button 
-              className="btn btn-sm btn-outline-primary me-2"
-              onClick={() => window.open('https://example.com/help', '_blank')}
-            >
-              <i className="bi bi-question-circle me-1"></i> Help
-            </button>
+
             <button 
               className="btn btn-sm btn-outline-secondary"
               onClick={() => {

@@ -6,7 +6,7 @@ const FileUpload = ({ onAnalysisComplete, onError, loading, setLoading }) => {
   const [fileName, setFileName] = useState("");
   const [isExtracting, setIsExtracting] = useState(false);
 
-  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+  const API_URL = process.env.REACT_APP_API_URL;
 
   const handleFileChange = async (e) => {
     const file = e.target.files[0];
