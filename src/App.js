@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     const checkApiHealth = async () => {
       try {
-        const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+        const API_URL = "http://localhost:5000";
         const response = await fetch(`${API_URL}/health`);
         const data = await response.json();
         setApiStatus({
